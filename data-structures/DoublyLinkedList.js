@@ -132,6 +132,21 @@ class DoublyLinkedList {
     return temp;
   }
 
+  reverse() {
+    if (this.isEmpty()) return undefined;
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+    for (let i = 0; i < this.length; i++) {
+      let after = currentNode.next;
+      let before = currentNode.prev;
+      currentNode.prev = after;
+      currentNode.next = before;
+      currentNode = currentNode.prev;
+    }
+    return this;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -142,9 +157,9 @@ class DoublyLinkedList {
   }
 }
 
-// const doublyLinkedList = new DoublyLinkedList(5);
-// doublyLinkedList.push(6);
-// doublyLinkedList.push(7);
+const doublyLinkedList = new DoublyLinkedList(5);
+doublyLinkedList.push(6);
+doublyLinkedList.push(7);
 // doublyLinkedList.pop();
 // doublyLinkedList.pop();
 // doublyLinkedList.pop();
@@ -160,4 +175,7 @@ class DoublyLinkedList {
 // doublyLinkedList.insert(0, 4);
 // doublyLinkedList.insert(2, 20);
 // doublyLinkedList.remove(1);
-// doublyLinkedList.print();
+doublyLinkedList.print();
+console.log("-----------------------");
+doublyLinkedList.reverse();
+doublyLinkedList.print();
