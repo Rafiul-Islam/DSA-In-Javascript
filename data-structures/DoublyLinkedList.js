@@ -157,9 +157,9 @@ class DoublyLinkedList {
   }
 }
 
-const doublyLinkedList = new DoublyLinkedList(5);
-doublyLinkedList.push(6);
-doublyLinkedList.push(7);
+// const doublyLinkedList = new DoublyLinkedList(5);
+// doublyLinkedList.push(6);
+// doublyLinkedList.push(7);
 // doublyLinkedList.pop();
 // doublyLinkedList.pop();
 // doublyLinkedList.pop();
@@ -175,7 +175,7 @@ doublyLinkedList.push(7);
 // doublyLinkedList.insert(0, 4);
 // doublyLinkedList.insert(2, 20);
 // doublyLinkedList.remove(1);
-doublyLinkedList.print();
-console.log("-----------------------");
-doublyLinkedList.reverse();
-doublyLinkedList.print();
+// doublyLinkedList.print();
+// console.log("-----------------------");
+// doublyLinkedList.reverse();
+// doublyLinkedList.print();
