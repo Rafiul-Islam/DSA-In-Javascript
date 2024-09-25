@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class CirculerSinglyLinkedList {
+class CircularSinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -138,24 +138,24 @@ class CirculerSinglyLinkedList {
   }
 }
 
-// const circulerSinglyLinkedList = new CirculerSinglyLinkedList();
-// circulerSinglyLinkedList.push(5);
-// circulerSinglyLinkedList.push(6);
-// circulerSinglyLinkedList.push(7);
-// console.log(circulerSinglyLinkedList.pop());
-// console.log(circulerSinglyLinkedList.pop());
-// console.log(circulerSinglyLinkedList.pop());
-// console.log(circulerSinglyLinkedList.pop());
-// circulerSinglyLinkedList.unShift(4);
-// circulerSinglyLinkedList.unShift(3);
-// console.log(circulerSinglyLinkedList.shift());
-// console.log(circulerSinglyLinkedList.shift());
-// console.log(circulerSinglyLinkedList.shift());
-// console.log(circulerSinglyLinkedList.get(1));
-// circulerSinglyLinkedList.insert(1, 4);
-// circulerSinglyLinkedList.remove(1);
-// circulerSinglyLinkedList.print();
+// const circularSinglyLinkedList = new CircularSinglyLinkedList();
+// circularSinglyLinkedList.push(5);
+// circularSinglyLinkedList.push(6);
+// circularSinglyLinkedList.push(7);
+// console.log(circularSinglyLinkedList.pop());
+// console.log(circularSinglyLinkedList.pop());
+// console.log(circularSinglyLinkedList.pop());
+// console.log(circularSinglyLinkedList.pop());
+// circularSinglyLinkedList.unShift(4);
+// circularSinglyLinkedList.unShift(3);
+// console.log(circularSinglyLinkedList.shift());
+// console.log(circularSinglyLinkedList.shift());
+// console.log(circularSinglyLinkedList.shift());
+// console.log(circularSinglyLinkedList.get(1));
+// circularSinglyLinkedList.insert(1, 4);
+// circularSinglyLinkedList.remove(1);
+// circularSinglyLinkedList.print();
 // console.log("------------------");
-// circulerSinglyLinkedList.reverse();
-// circulerSinglyLinkedList.print();
-// console.log(circulerSinglyLinkedList);
+// circularSinglyLinkedList.reverse();
+// circularSinglyLinkedList.print();
+// console.log(circularSinglyLinkedList);
