@@ -132,6 +132,22 @@ class CircularDoublyLinkedList {
     return target;
   }
 
+  reverse() {
+    if (this.isEmpty()) return undefined;
+    let currentNode = this.head;
+    this.head = this.tail;
+    this.tail = currentNode;
+    let prev = this.head;
+    for (let i = 0; i < this.length; i++) {
+      const next = currentNode.next;
+      currentNode.next = prev;
+      currentNode.prev = next;
+      prev = currentNode;
+      currentNode = next;
+    }
+    return this;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -142,11 +158,11 @@ class CircularDoublyLinkedList {
   }
 }
 
-const circularDoublyLinkedList = new CircularDoublyLinkedList();
-circularDoublyLinkedList.push(5);
-circularDoublyLinkedList.push(6);
-circularDoublyLinkedList.push(7);
-circularDoublyLinkedList.push(8);
+// const circularDoublyLinkedList = new CircularDoublyLinkedList();
+// circularDoublyLinkedList.push(5);
+// circularDoublyLinkedList.push(6);
+// circularDoublyLinkedList.push(7);
+// circularDoublyLinkedList.push(8);
 // console.log(circularDoublyLinkedList.pop());
 // console.log(circularDoublyLinkedList.pop());
 // console.log(circularDoublyLinkedList.pop());
@@ -158,4 +174,7 @@ circularDoublyLinkedList.push(8);
 // circularDoublyLinkedList.insert(1, 4);
 // circularDoublyLinkedList.insert(0, 3);
 // console.log(circularDoublyLinkedList.remove(1));
-circularDoublyLinkedList.print();
+// circularDoublyLinkedList.print();
+// console.log("--------------------------");
+// circularDoublyLinkedList.reverse();
+// circularDoublyLinkedList.print();
