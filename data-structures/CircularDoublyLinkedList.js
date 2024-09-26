@@ -94,6 +94,13 @@ class CircularDoublyLinkedList {
     return currentNode;
   }
 
+  set(index, value) {
+    const targetNode = this.get(index);
+    if (!targetNode) return false;
+    targetNode.value = value;
+    return true;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
