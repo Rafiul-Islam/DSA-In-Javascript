@@ -116,6 +116,22 @@ class CircularDoublyLinkedList {
     return true;
   }
 
+  remove(index) {
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    if (index === this.length) return undefined;
+    let before = this.get(index - 1);
+    if (!before) return undefined;
+    let target = before.next;
+    let after = target.next;
+    before.next = after;
+    after.prev = before;
+    target.prev = null;
+    target.next = null;
+    this.length--;
+    return target;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -126,18 +142,20 @@ class CircularDoublyLinkedList {
   }
 }
 
-// const circularDoublyLinkedList = new CircularDoublyLinkedList();
-// circularDoublyLinkedList.push(5);
-// circularDoublyLinkedList.push(6);
-// circularDoublyLinkedList.push(7);
-// // console.log(circularDoublyLinkedList.pop());
-// // console.log(circularDoublyLinkedList.pop());
-// // console.log(circularDoublyLinkedList.pop());
-// // console.log(circularDoublyLinkedList);
-// // circularDoublyLinkedList.unShift(4);
-// // circularDoublyLinkedList.unShift(3);
-// // console.log(circularDoublyLinkedList.shift());
-// // console.log(circularDoublyLinkedList.get(1));
-// // circularDoublyLinkedList.insert(1, 4);
-// // circularDoublyLinkedList.insert(0, 3);
-// circularDoublyLinkedList.print();
+const circularDoublyLinkedList = new CircularDoublyLinkedList();
+circularDoublyLinkedList.push(5);
+circularDoublyLinkedList.push(6);
+circularDoublyLinkedList.push(7);
+circularDoublyLinkedList.push(8);
+// console.log(circularDoublyLinkedList.pop());
+// console.log(circularDoublyLinkedList.pop());
+// console.log(circularDoublyLinkedList.pop());
+// console.log(circularDoublyLinkedList);
+// circularDoublyLinkedList.unShift(4);
+// circularDoublyLinkedList.unShift(3);
+// console.log(circularDoublyLinkedList.shift());
+// console.log(circularDoublyLinkedList.get(1));
+// circularDoublyLinkedList.insert(1, 4);
+// circularDoublyLinkedList.insert(0, 3);
+// console.log(circularDoublyLinkedList.remove(1));
+circularDoublyLinkedList.print();
