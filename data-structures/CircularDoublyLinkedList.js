@@ -77,6 +77,23 @@ class CircularDoublyLinkedList {
     return temp;
   }
 
+  get(index) {
+    if (this.isEmpty()) return undefined;
+    if (index < 0 || index >= this.length) return undefined;
+    let currentNode = this.head;
+    if (this.length / 2 < index) {
+      for (let i = 0; i < index; i++) {
+        currentNode = currentNode.next;
+      }
+    } else {
+      currentNode = this.tail;
+      for (let i = this.length - 1; i > index; i--) {
+        currentNode = currentNode.prev;
+      }
+    }
+    return currentNode;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -98,4 +115,5 @@ class CircularDoublyLinkedList {
 // // circularDoublyLinkedList.unShift(4);
 // // circularDoublyLinkedList.unShift(3);
 // // console.log(circularDoublyLinkedList.shift());
+// console.log(circularDoublyLinkedList.get(1));
 // circularDoublyLinkedList.print();
