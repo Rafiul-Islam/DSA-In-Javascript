@@ -101,6 +101,21 @@ class CircularDoublyLinkedList {
     return true;
   }
 
+  insert(index, value) {
+    if (this.isEmpty() || index === this.length) return this.push(value);
+    if (index === 0) return this.unShift(value);
+    let before = this.get(index - 1);
+    if (!before) return false;
+    let after = before.next;
+    const newNode = new Node(value);
+    newNode.prev = before;
+    newNode.next = after;
+    before.next = newNode;
+    after.prev = newNode;
+    this.length++;
+    return true;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -122,5 +137,7 @@ class CircularDoublyLinkedList {
 // // circularDoublyLinkedList.unShift(4);
 // // circularDoublyLinkedList.unShift(3);
 // // console.log(circularDoublyLinkedList.shift());
-// console.log(circularDoublyLinkedList.get(1));
+// // console.log(circularDoublyLinkedList.get(1));
+// // circularDoublyLinkedList.insert(1, 4);
+// // circularDoublyLinkedList.insert(0, 3);
 // circularDoublyLinkedList.print();
