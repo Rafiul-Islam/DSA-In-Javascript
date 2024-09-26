@@ -52,6 +52,18 @@ class CircularDoublyLinkedList {
     return temp;
   }
 
+  unShift(value) {
+    if (this.isEmpty()) return this.push(value);
+    const newNode = new Node(value);
+    newNode.next = this.head;
+    this.head.prev = newNode;
+    this.head = newNode;
+    this.head.prev = this.tail;
+    this.tail.next = this.head;
+    this.length++;
+    return this;
+  }
+
   print() {
     if (this.isEmpty()) return undefined;
     let currentNode = this.head;
@@ -62,12 +74,14 @@ class CircularDoublyLinkedList {
   }
 }
 
-const circularDoublyLinkedList = new CircularDoublyLinkedList();
-circularDoublyLinkedList.push(5);
-circularDoublyLinkedList.push(6);
-circularDoublyLinkedList.push(7);
-console.log(circularDoublyLinkedList.pop());
-console.log(circularDoublyLinkedList.pop());
-console.log(circularDoublyLinkedList.pop());
-// console.log(circularDoublyLinkedList);
-circularDoublyLinkedList.print();
+// const circularDoublyLinkedList = new CircularDoublyLinkedList();
+// circularDoublyLinkedList.push(5);
+// circularDoublyLinkedList.push(6);
+// circularDoublyLinkedList.push(7);
+// // console.log(circularDoublyLinkedList.pop());
+// // console.log(circularDoublyLinkedList.pop());
+// // console.log(circularDoublyLinkedList.pop());
+// // console.log(circularDoublyLinkedList);
+// // circularDoublyLinkedList.unShift(4);
+// // circularDoublyLinkedList.unShift(3);
+// circularDoublyLinkedList.print();
