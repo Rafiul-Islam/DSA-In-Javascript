@@ -33,6 +33,14 @@ class Queue {
     return this.items[0];
   }
 
+  search(value) {
+    if (this.isEmpty()) return undefined;
+    for (let i = 0; i < this.length; i++) {
+      if (this.items[i] === value) return i;
+    }
+    return -1;
+  }
+
   clear() {
     if (this.isEmpty()) return undefined;
     this.deQueue();
@@ -59,13 +67,13 @@ class Queue {
   }
 }
 
-const queue = new Queue();
-queue.enQueue(5);
-queue.enQueue(6);
-queue.enQueue(7);
-// console.log(queue.deQueue());
-queue.print();
-console.log("-------------------");
-// queue.clear();
-queue.reverse();
-queue.print();
+// const queue = new Queue();
+// queue.enQueue(5);
+// queue.enQueue(6);
+// queue.enQueue(7);
+// // console.log(queue.deQueue());
+// queue.print();
+// console.log("-------------------");
+// // queue.clear();
+// queue.reverse();
+// queue.print();
