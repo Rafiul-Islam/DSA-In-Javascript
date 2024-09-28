@@ -46,16 +46,34 @@ class Stack {
     return -1;
   }
 
-  reverse() {
-    let start = 0;
-    let end = this.count - 1;
+  // reverse() {
+  //   let start = 0;
+  //   let end = this.count - 1;
 
-    while (start < end) {
-      const temp = this.items[start];
-      this.items[start] = this.items[end];
-      this.items[end] = temp;
-      start++;
-      end--;
+  //   while (start < end) {
+  //     const temp = this.items[start];
+  //     this.items[start] = this.items[end];
+  //     this.items[end] = temp;
+  //     start++;
+  //     end--;
+  //   }
+  // }
+
+  insertAtBottom(value) {
+    if (this.isEmpty()) {
+      this.push(value);
+    } else {
+      const top = this.pop();
+      this.insertAtBottom(value);
+      this.push(top);
+    }
+  }
+
+  reverse() {
+    if (!this.isEmpty()) {
+      const top = this.pop();
+      this.reverse(top);
+      this.insertAtBottom(top);
     }
   }
 
@@ -66,15 +84,15 @@ class Stack {
   }
 }
 
-const stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
-// console.log(stack.pop());
-// console.log(stack.pop());
-// console.log(stack.peek());
-stack.print();
-console.log("------------------");
-stack.reverse();
-stack.print();
+// const stack = new Stack();
+// stack.push(1);
+// stack.push(2);
+// stack.push(3);
+// stack.push(4);
+// // console.log(stack.pop());
+// // console.log(stack.pop());
+// // console.log(stack.peek());
+// stack.print();
+// console.log("------------------");
+// stack.reverse();
+// stack.print();
