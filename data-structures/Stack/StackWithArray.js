@@ -46,6 +46,19 @@ class Stack {
     return -1;
   }
 
+  reverse() {
+    let start = 0;
+    let end = this.count - 1;
+
+    while (start < end) {
+      const temp = this.items[start];
+      this.items[start] = this.items[end];
+      this.items[end] = temp;
+      start++;
+      end--;
+    }
+  }
+
   print() {
     for (let i = 0; i < this.count; i++) {
       console.log(`Index ${i}:`, this.items[i]);
@@ -54,9 +67,14 @@ class Stack {
 }
 
 const stack = new Stack();
-console.log(stack.push(5));
-console.log(stack.push(6));
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.peek());
+stack.push(1);
+stack.push(2);
+stack.push(3);
+stack.push(4);
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.peek());
+stack.print();
+console.log("------------------");
+stack.reverse();
 stack.print();
