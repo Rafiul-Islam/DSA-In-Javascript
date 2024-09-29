@@ -66,15 +66,15 @@ class BST {
   }
 }
 
-const bst = new BST();
-bst.insert(5);
-bst.insert(11);
-bst.insert(2);
-bst.insert(10);
-bst.insert(6);
-bst.insert(5);
-bst.insert(11);
-bst.insert(1);
-console.log(bst);
-console.log(bst.minValueNode());
-console.log(bst.maxValueNode());
+// const bst = new BST();
+// bst.insert(5);
+// bst.insert(11);
+// bst.insert(2);
+// bst.insert(10);
+// bst.insert(6);
+// bst.insert(5);
+// bst.insert(11);
+// bst.insert(1);
+// console.log(bst);
+// console.log(bst.minValueNode());
+// console.log(bst.maxValueNode());
