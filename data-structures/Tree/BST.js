@@ -65,6 +65,16 @@ class BST {
     return currentNode;
   }
 
+  height(root) {
+    if (root === null) return 0;
+    return Math.max(this.height(root.left), this.height(root.right)) + 1;
+  }
+
+  size(root = this.root) {
+    if (root === null) return 0;
+    return this.size(root.left) + this.size(root.right) + 1;
+  }
+
   preOrderTraversal(node) {
     console.log(node.value);
     if (node.left) {
@@ -96,13 +106,13 @@ class BST {
   }
 }
 
-// const bst = new BST();
-// bst.insert(5);
-// bst.insert(11);
-// bst.insert(2);
-// bst.insert(10);
-// bst.insert(6);
-// bst.insert(1);
+const bst = new BST();
+bst.insert(5);
+bst.insert(11);
+bst.insert(2);
+bst.insert(10);
+bst.insert(6);
+bst.insert(1);
 // console.log(bst);
 // console.log(bst.minValueNode());
 // console.log(bst.maxValueNode());
