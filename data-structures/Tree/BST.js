@@ -65,7 +65,7 @@ class BST {
     return currentNode;
   }
 
-  height(root) {
+  height(root = this.root) {
     if (root === null) return 0;
     return Math.max(this.height(root.left), this.height(root.right)) + 1;
   }
