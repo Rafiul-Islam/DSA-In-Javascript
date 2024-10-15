@@ -104,6 +104,23 @@ class BST {
       this.inOrderTraversal(node.right);
     }
   }
+
+  printCurrentLevel(root = this.root, level) {
+    if (root === null) return undefined;
+    if (level === 1) {
+      console.log(root.value);
+    } else if (level > 1) {
+      this.printCurrentLevel(root.left, level - 1);
+      this.printCurrentLevel(root.right, level - 1);
+    }
+  }
+
+  levelOrderTraversal() {
+    const height = this.height();
+    for (let i = 1; i <= height; i++) {
+      this.printCurrentLevel(this.root, i);
+    }
+  }
 }
 
 const bst = new BST();
@@ -118,3 +135,4 @@ bst.insert(1);
 // console.log(bst.maxValueNode());
 // bst.preOrderTraversal(bst.root);
 // bst.inOrderTraversal(bst.root);
+bst.levelOrderTraversal();
