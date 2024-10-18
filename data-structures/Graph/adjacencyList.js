@@ -41,7 +41,8 @@ class Graph {
 
   removeVertex(vertex) {
     if (this.adjacencyList[vertex]) {
-      this.adjacencyList[vertex].forEach((v) => {
+      const allEdges = [...this.adjacencyList[vertex]];
+      allEdges.forEach((v) => {
         this.removeEdge(vertex, v);
       });
       delete this.adjacencyList[vertex];
