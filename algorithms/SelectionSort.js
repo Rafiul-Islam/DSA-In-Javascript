@@ -1,6 +1,6 @@
 function SelectionSort(list) {
   const listSize = list.length;
-  for (let i = 0; i < listSize; i++) {
+  for (let i = 0; i < listSize - 1; i++) {
     let minItemIndex = i;
     for (let j = i + 1; j < listSize; j++) {
       if (list[minItemIndex] > list[j]) {
