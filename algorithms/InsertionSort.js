@@ -1,4 +1,4 @@
-function InsertionSort(list) {
+function insertionSort(list) {
   for (let i = 1; i < list.length; i++) {
     let current = list[i];
     var j = i - 1;
@@ -12,4 +12,4 @@ function InsertionSort(list) {
 }
 
 const list = [8, 2, 4, 1, 3];
-console.log(InsertionSort(list));
+console.log(insertionSort(list));

@@ -1,4 +1,4 @@
-function BubbleSort(list) {
+function bubbleSort(list) {
   for (let i = 0; i < list.length; i++) {
     for (let j = 0; j < list.length - i - 1; j++) {
       if (list[j] > list[j + 1]) {
@@ -12,4 +12,4 @@ function BubbleSort(list) {
 }
 
 const list = [4, 5, 6, 89, 4, 13, 5, 85, 2];
-console.log(BubbleSort(list));
+console.log(bubbleSort(list));
