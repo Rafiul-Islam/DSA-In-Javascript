@@ -1,49 +1,63 @@
-function bubbleSort(list) {
-  for (let i = 0; i < list.length; i++) {
-    for (let j = 0; j < list.length - i - 1; j++) {
-      if (list[j] > list[j + 1]) {
-        const temp = list[j];
-        list[j] = list[j + 1];
-        list[j + 1] = temp;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+
+class BST {
+  constructor() {
+    this.root = null;
+  }
+
+  insert(value) {
+    const newNode = new Node(value);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      let currentNode = this.root;
+      while (currentNode) {
+        if (currentNode.value === value) return;
+        if (currentNode.value > value) {
+          if (currentNode.left === null) {
+            currentNode.left = newNode;
+            return;
+          } else currentNode = currentNode.left;
+        } else {
+          if (currentNode.right === null) {
+            currentNode.right = newNode;
+            return;
+          } else currentNode = currentNode.right;
+        }
       }
     }
   }
-  console.log(list);
-}
 
-function selectionSort(list) {
-  for (let i = 0; i < list.length; i++) {
-    let minIndex = i;
-    for (let j = i + 1; j < list.length; j++) {
-      if (list[minIndex] > list[j]) {
-        minIndex = j;
-      }
+  BFS() {
+    let currentNode = this.root;
+    const result = [];
+    const queue = [];
+    queue.push(currentNode);
+
+    while (queue.length) {
+      currentNode = queue.shift();
+      result.push(currentNode.value);
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
     }
-    if (minIndex !== i) {
-      const temp = list[i];
-      list[i] = list[minIndex];
-      list[minIndex] = temp;
-    }
+    return result;
   }
-  console.log(list);
 }
 
-function insertionSort(list) {
-  for (let i = 1; i < list.length; i++) {
-    let current = list[i];
-    let j = i - 1;
-    while (j >= 0 && list[j] > current) {
-      list[j + 1] = list[j];
-      j--;
-    }
-    list[j + 1] = current;
-  }
-  console.log(list);
-}
+const bst = new BST();
+bst.insert(47);
+bst.insert(21);
+bst.insert(76);
+bst.insert(18);
+bst.insert(27);
+bst.insert(52);
+bst.insert(82);
 
-// const list = [4, 2, 6, 5, 1, 3];
-// bubbleSort(list);
-// selectionSort(list);
-
-// const list = [1, 2, 4, 3, 5, 6];
-// insertionSort(list);
+console.log(bst.root);
+console.log(bst.BFS());

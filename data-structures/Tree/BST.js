@@ -121,18 +121,33 @@ class BST {
       this.printCurrentLevel(this.root, i);
     }
   }
+
+  BFS() {
+    let currentNode = this.root;
+    const result = [];
+    const queue = [];
+    queue.push(currentNode);
+
+    while (queue.length) {
+      currentNode = queue.shift();
+      result.push(currentNode.value);
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+    return result;
+  }
 }
 
-const bst = new BST();
-bst.insert(5);
-bst.insert(11);
-bst.insert(2);
-bst.insert(10);
-bst.insert(6);
-bst.insert(1);
+// const bst = new BST();
+// bst.insert(5);
+// bst.insert(11);
+// bst.insert(2);
+// bst.insert(10);
+// bst.insert(6);
+// bst.insert(1);
 // console.log(bst);
 // console.log(bst.minValueNode());
 // console.log(bst.maxValueNode());
 // bst.preOrderTraversal(bst.root);
 // bst.inOrderTraversal(bst.root);
-bst.levelOrderTraversal();
+// bst.levelOrderTraversal();
