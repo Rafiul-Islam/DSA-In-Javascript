@@ -136,6 +136,33 @@ class BST {
     }
     return result;
   }
+
+  zigzagTraversal() {
+    if (!this.root) return;
+    const result = [];
+    const queue = [];
+    queue.push(this.root);
+
+    let leftToRight = true;
+
+    while (queue.length) {
+      const size = queue.length;
+      let temp = new Array(size);
+
+      for (let i = 0; i < size; i++) {
+        const startingIndex = leftToRight ? i : size - i - 1;
+        const currentNode = queue.shift();
+        temp[startingIndex] = currentNode.value;
+        if (currentNode.left) queue.push(currentNode.left);
+        if (currentNode.right) queue.push(currentNode.right);
+      }
+
+      leftToRight = !leftToRight;
+      temp.forEach((item) => result.push(item));
+    }
+
+    return result;
+  }
 }
 
 // const bst = new BST();
